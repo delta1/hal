@@ -55,10 +55,21 @@ version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b9e89470017230c38e52b82b3ee3f530db1856ba1d434e3a67a3456a8a8dec5f"
 dependencies = [
- "bitcoin_hashes 0.9.4",
+ "bitcoin_hashes 0.9.7",
  "rand_core 0.4.2",
  "serde",
  "unicode-normalization",
+]
+
+[[package]]
+name = "bitcoin"
+version = "0.26.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6742ec672d3f12506f4ac5c0d853926ff1f94e675f60ffd3224039972bf663f1"
+dependencies = [
+ "bech32 0.7.3",
+ "bitcoin_hashes 0.9.7",
+ "secp256k1 0.20.3",
 ]
 
 [[package]]
@@ -75,9 +86,9 @@ dependencies = [
 
 [[package]]
 name = "bitcoin_hashes"
-version = "0.9.4"
+version = "0.9.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0aaf87b776808e26ae93289bc7d025092b6d909c193f0cdee0b3a86e7bd3c776"
+checksum = "7ce18265ec2324ad075345d5814fbeed4f41f0a660055dc78840b74d19b874b1"
 
 [[package]]
 name = "bitcoin_hashes"
@@ -169,7 +180,7 @@ version = "0.9.0"
 dependencies = [
  "base64-compat",
  "bip39",
- "bitcoin",
+ "bitcoin 0.29.2",
  "byteorder",
  "chrono",
  "clap",
@@ -226,13 +237,23 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "56d855069fafbb9b344c0f962150cd2c1187975cb1c22c1522c240d8c4986714"
 
 [[package]]
-name = "lightning-invoice"
-version = "0.4.0"
+name = "lightning"
+version = "0.0.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "72828c99432e342f067b9661f556ce9667230565c88297c0b4e8a4541ffc0bd0"
+checksum = "6f99cce0a9a62b73144dad86cf9d722379db3de049fec5df8f5437a6c92542ab"
+dependencies = [
+ "bitcoin 0.26.2",
+]
+
+[[package]]
+name = "lightning-invoice"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c0738f41c16a3501726c4ada573cad59835e4ee66c1e7d08a4ae4d6b7baa9268"
 dependencies = [
  "bech32 0.7.3",
- "bitcoin_hashes 0.9.4",
+ "bitcoin_hashes 0.9.7",
+ "lightning",
  "num-traits",
  "secp256k1 0.20.3",
 ]
@@ -264,7 +285,7 @@ version = "9.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b9601439f168c13bdc5bf84349c2e61c815be4a4dcebe8c4ff4af58f4e8a6d20"
 dependencies = [
- "bitcoin",
+ "bitcoin 0.29.2",
 ]
 
 [[package]]

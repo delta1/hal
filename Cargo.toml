@@ -35,7 +35,7 @@ hex = "0.3.2"
 bitcoin = { version = "0.29.2", features = [ "serde" ] }
 secp256k1 = { version = "0.24.3", features = [ "recovery" ] }
 bip39 = { version = "1.0.1", features = [ "all-languages" ] }
-lightning-invoice = "0.4.0"
+lightning-invoice = "0.5.0"
 miniscript = { version = "9.0.0", features = ["compiler"] }
 
 # For external commands
